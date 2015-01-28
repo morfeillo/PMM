@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExDam2Nov14</string>
+    <string name="txNum1">Ingrese primer valor:</string>
+    <string name="txNum2">Ingrese segundo valor:</string>
+    <string name="action_settings">Settings</string>
+    <string name="rbRestar">Restar</string>
+    <string name="rbSumar">Sumar</string>
+    <string name="btnOperar">Operar</string>
+    <string name="txResultado">resultado</string>
+    <string name="cbDivertir">Pulsa para Divertirte!</string>
+
+
+
+</resources>

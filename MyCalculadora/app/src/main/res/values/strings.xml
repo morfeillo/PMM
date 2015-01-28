@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyCalculadora</string>
+    <string name="hello_world">Calculadora</string>
+    <string name="action_settings">Settings</string>
+    <string name="txNum2">Introduce segundo numero</string>
+    <string name="txNum1">Introduce primer numero</string>
+    <string name="rbSumar">Sumar</string>
+    <string name="rbRestar">Restar</string>
+    <string name="rbMulti">Multiplicar</string>
+    <string name="btnCalcular">Calcular</string>
+
+</resources>

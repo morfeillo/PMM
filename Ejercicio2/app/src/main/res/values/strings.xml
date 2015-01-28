@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ejercicio2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnColor1">Color1</string>
+    <string name="btnColor2">Color2</string>
+    <string name="btnColor3">Color3</string>
+
+</resources>

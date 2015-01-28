@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ejercicio6</string>
+    <string name="hello_world">PANTALLA 1</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_pantalla2">Pantalla2</string>
+    <string name="tvPantalla2"></string>
+    <string name="btnPantalla1">Pantalla1</string>
+    <string name="btnPantalla2">Pantalla 2</string>
+    <string name="btnPantalla3">Pantalla 3</string>
+    <string name="tvPantalla1">Pantalla 1</string>
+    <string name="title_activity_pantalla3">Pantalla3</string>
+    <string name="tvPantalla3">Pantalla 3</string>
+
+</resources>

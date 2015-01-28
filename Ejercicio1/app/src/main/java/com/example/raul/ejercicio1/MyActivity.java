@@ -1,0 +1,80 @@
+package com.example.raul.ejercicio1;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.graphics.Color.WHITE;
+
+
+public class MyActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my);
+
+        final RadioGroup rgBotones = (RadioGroup)findViewById(R.id.rgBotones);
+        final Button btnBorrar = (Button)findViewById(R.id.btnBorrar);
+        final Button btnColor = (Button)findViewById(R.id.btnColor);
+        final RadioButton rdRojo = (RadioButton)findViewById(R.id.rbRojo);
+        final RadioButton rdVerde = (RadioButton)findViewById(R.id.rbVerde);
+        final RadioButton rdAzul = (RadioButton)findViewById(R.id.rbAzul);
+        final TextView tvColor = (TextView)findViewById(R.id.tvColor);
+
+    btnColor.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (rdRojo.isChecked()){
+                tvColor.setBackgroundColor(Color.RED);
+            }
+            else{
+                if (rdAzul.isChecked()){
+                    tvColor.setBackgroundColor(Color.BLUE);
+                }
+                else{
+                    tvColor.setBackgroundColor(Color.GREEN);
+                }
+            }
+        }
+    }
+
+    );
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvColor.setBackgroundColor(WHITE);
+                rgBotones.clearCheck();
+            }
+        });
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.my, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EjemploLayout</string>
+    <string name="Boton1">Boton1</string>
+    <string name="Boton2">Boton2</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

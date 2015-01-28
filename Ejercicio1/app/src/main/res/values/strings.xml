@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ejercicio1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Borrar">Borrar</string>
+    <string name="PonerColor">Poner Color</string>
+    <string name="rdVerde">Verde</string>
+    <string name="rdRojo">Rojo</string>
+    <string name="rdAzul">Azul</string>
+
+</resources>
