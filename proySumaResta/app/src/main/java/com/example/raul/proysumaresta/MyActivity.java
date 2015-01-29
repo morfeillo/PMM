@@ -1,17 +1,22 @@
 package com.example.raul.proysumaresta;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +26,15 @@ import static android.view.View.INVISIBLE;
 public class MyActivity extends Activity {
 
     public static int COD_RESPUESTA=0;
+    public Spinner miSpinner;
+
+    public Operacion[] figuras =
+            new Operacion[]{
+                    new Operacion("Suma"),
+                    new Operacion("Resta"),
+                    new Operacion("Multiplicacion")
+            };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +49,11 @@ public class MyActivity extends Activity {
         final RadioButton rbRestar = (RadioButton)findViewById(R.id.rbRestar);
         final CheckBox cbDivertir = (CheckBox)findViewById(R.id.cbDivertir);
         final ImageView imgImage = (ImageView)findViewById(R.id.imgImagen);
+        miSpinner = (Spinner) findViewById(R.id.spinner);
+
+        Adaptador miAdaptador = new Adaptador(this);
+        miSpinner.setAdapter(miAdaptador);
+
 
         btnOperar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,4 +114,36 @@ public class MyActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    class Adaptador extends ArrayAdapter<Operacion> {
+        public Activity Actividad;
+
+        public Adaptador(Activity laActividad){
+            super(laActividad, R.layout.contenido_spinner, figuras);
+            this.Actividad=laActividad;
+        }
+
+        public View getDropDownView(int position, View convertView, ViewGroup parent){
+            View vistaDesplegada=getView(position, convertView, parent);
+            return vistaDesplegada;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent){
+            View item=convertView;
+            ViewHolder holder;
+
+            if(item==null) {
+                LayoutInflater inflater = Actividad.getLayoutInflater();
+                item = inflater.inflate(R.layout.contenido_spinner, null);
+                holder = new ViewHolder();
+                holder.tipo = (TextView) item.findViewById(R.id.campoTipo);
+                item.setTag(holder);
+            }else{
+                holder=(ViewHolder)item.getTag();
+            }
+            holder.tipo.setText(figuras[position].getTipo());
+            return item;
+        }
+    }
+
 }
