@@ -60,8 +60,8 @@ public class MyActivity extends Activity {
         Adaptador miAdaptador = new Adaptador(this);
         miSpinner.setAdapter(miAdaptador);
 
-        ClientesSQLiteHelper cliBDh = new ClientesSQLiteHelper(this, "DBEnvio", null, 1);
-        final SQLiteDatabase bd = cliBDh.getWritableDatabase();
+     //   ClientesSQLiteHelper cliBDh = new ClientesSQLiteHelper(this, "DBEnvio", null, 1);
+   //     final SQLiteDatabase bd = cliBDh.getWritableDatabase();
 
 
         miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -84,7 +84,7 @@ public class MyActivity extends Activity {
                         precioKilo=tipoPrecio;
                         recoger();
                         String dineroTotal = incremento(total).toString();
-                        bd.execSQL("INSERT INTO Envio" + " VALUES ('"+tipoZona+ "', '" +total+ "')");
+                      // bd.execSQL("INSERT INTO Envio" + " VALUES ('"+tipoZona+ "', '" +total+ "')");
 
                         /*
                         if (bd!=null) {
@@ -92,7 +92,7 @@ public class MyActivity extends Activity {
                                     "VALUES ('"+tipoZona+"','"+total+"')");
                         }*/
 
-                        bd.close();
+                    //    bd.close();
 
                         Toast.makeText(getApplicationContext(),"Insertado en la BBDD",Toast.LENGTH_SHORT).show();
                         Intent miIntent = new Intent(MyActivity .this,Pantalla2.class);
