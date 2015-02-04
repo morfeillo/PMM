@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExamenAndroid</string>
+    <string name="hello_world">TRANSPORTES ANDROID</string>
+    <string name="action_settings">Settings</string>
+    <string name="Introducepeso">Introduce el peso del paquete</string>
+
+</resources>
