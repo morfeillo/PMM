@@ -55,13 +55,14 @@ public class MyActivity extends Activity {
         final EditText etPeso = (EditText) findViewById(R.id.etPeso);
 
         rbNormal.isChecked();
+
         miSpinner = (Spinner) findViewById(R.id.spinner);
 
         Adaptador miAdaptador = new Adaptador(this);
         miSpinner.setAdapter(miAdaptador);
 
-     //   ClientesSQLiteHelper cliBDh = new ClientesSQLiteHelper(this, "DBEnvio", null, 1);
-   //     final SQLiteDatabase bd = cliBDh.getWritableDatabase();
+             ClientesSQLiteHelper cliBDh = new ClientesSQLiteHelper(this, "DBEnvio", null, 1);
+          final SQLiteDatabase bd = cliBDh.getWritableDatabase();
 
 
         miSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -83,8 +84,9 @@ public class MyActivity extends Activity {
                     public void onClick(View view) {
                         precioKilo=tipoPrecio;
                         recoger();
+                        incremento(total);
                         String dineroTotal = incremento(total).toString();
-                      // bd.execSQL("INSERT INTO Envio" + " VALUES ('"+tipoZona+ "', '" +total+ "')");
+                       bd.execSQL("INSERT INTO Envio" + " VALUES ('"+tipoZona+ "', '" +total+ "')");
 
                         /*
                         if (bd!=null) {
@@ -116,14 +118,14 @@ public class MyActivity extends Activity {
                 peso=Double.parseDouble(etPeso.getText().toString());
                      //checkeo el tipo d peso que es para calcular el peso x kilo y calculo el preciototal.
                 if (peso>5 && peso<10){
-                total=(peso*1.5)*precioKilo;
+                total=precioKilo +(peso*1.5);
                 }
                 else{
                     if (peso>10){
-                        total=(peso*2)*precioKilo;
+                        total=precioKilo+(peso*2);
                     }
                     else{
-                        total=peso*precioKilo;
+                        total=precioKilo+peso;
                     }
                 }
                 return total;

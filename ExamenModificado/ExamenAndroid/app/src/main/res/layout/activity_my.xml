@@ -89,4 +89,11 @@
         android:layout_alignEnd="@+id/spinner"
         android:background="@drawable/paq_mundo1" />
 
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ckTarjeta"
+        android:layout_toRightOf="@+id/etPeso"
+        android:layout_toEndOf="@+id/etPeso"></RadioGroup>
+
 </RelativeLayout>
